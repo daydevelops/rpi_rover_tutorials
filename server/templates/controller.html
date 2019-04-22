@@ -1,0 +1,61 @@
+
+<html>
+<head>
+    <title>Rover Controller</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel='stylesheet' href='static/css/style.css'>
+</head>
+<body>
+
+    <main id='controller-wrap'>
+        <div class='container-fluid'>
+            <div class='row' id='not-connected'><!-- show this row if user not connected -->
+                <div class='col-12'>
+                    <button class='d-block btn btn-lrg btn-primary' id='power-on-btn' onclick='powerOn()'>Power On</button>
+                </div>
+            </div>
+            <div id='connected'> <!-- show these rows when connected -->
+                <div class='row' id='top-row'>
+                    <div class='col-2' id='speed-col'>
+                        <!-- Speed slider -->
+                        <input id='speed-input' type='range' orient='vertical' min='-100' max='100' value='0' step='1' oninput='updateMotorSpeeds()' onchange='this.value=0; updateMotorSpeeds();'>
+                    </div>
+                    <div class='col-6' >
+                        <!-- cam -->
+                        <div id='cam-wrapper'>
+                        </div>
+                    </div>
+                    <div class='col-2'>
+                        <!-- left motor trim -->
+                        <i id='lmtrim-up' class='text-center d-block fas fa-angle-up fa-3x' onclick="changeTrim({'L':1,'R':0})"></i>
+                        <p id='lmtrim-val' class='text-center'>0</p>
+                        <i id='lmtrim-down' class='text-center d-block fas fa-angle-down fa-3x' onclick="changeTrim({'L':-1,'R':0})"></i>
+                    </div>
+                    <div class='col-2'>
+                        <!-- right motor trim -->
+                        <i id='rmtrim-up' class='text-center d-block fas fa-angle-up fa-3x' onclick="changeTrim({'L':0,'R':1})"></i>
+                        <p id='rmtrim-val' class='text-center'>0</p>
+                        <i id='rmtrim-down' class='text-center d-block fas fa-angle-down fa-3x' onclick="changeTrim({'L':0,'R':-1})"></i>
+                    </div>
+                </div>
+                <div class='row' id='bottom-row'>
+                    <div class='col-2 p-0'>
+                        <button class='btn btn-lrg btn-danger' id='power-off-btn' onclick='powerOff()'>
+                            OFF
+                        </button>
+                    </div>
+                    <div class='col-4 offset-6'>
+                        <!-- robot heading -->
+                        <input id='heading-input' type='range' min='-100' max='100' value='0' step='1' oninput='updateMotorSpeeds()' onchange='this.value=0; updateMotorSpeeds();'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src='static/js/controller.js'></script>
+</body>
+</html>
