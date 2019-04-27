@@ -1,0 +1,22 @@
+{
+  "name": "rpi_rover",
+  "version": "1.0.0",
+  "description": "A raspberry Pi based rover",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daydevelops/rpi_rover_tutorials.git"
+  },
+  "author": "DayDevelops",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daydevelops/rpi_rover_tutorials/issues"
+  },
+  "homepage": "https://github.com/daydevelops/rpi_rover_tutorials#readme",
+  "dependencies": {
+    "socket.io-client": "^2.2.0"
+  }
+}
