@@ -1,12 +1,14 @@
+import serial
+
 class MotorController(object):
 	def __init__(self):
-		print("starting serial connection")
+		self.ser = serial.Serial("/dev/ttyACM0",9600)
 
 	def stop(self):
-		print("telling arduino to stop")
+		self.ser.write(str.encode("S;"))
 
 	def leftM(self, speed):
-		print("telling Arduino to change left motor speed")
+		self.ser.write(str.encode("L"+str(speed)+";"))
 
 	def rightM(self, speed):
-		print( "telling Arduino to change right motor speed")
+		self.ser.write(str.encode("R"+str(speed)+";"))

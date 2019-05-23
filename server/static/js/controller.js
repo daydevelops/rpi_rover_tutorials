@@ -42,4 +42,8 @@ function updateMotorSpeeds() {
 
 function changeTrim(data) {
 	socket.emit('updateTrim',data);
+	left_trim = document.querySelector('#lmtrim-val');
+	right_trim = document.querySelector('#rmtrim-val');
+	left_trim.innerHTML = data.L + left_trim.innerHTML * 1;
+	right_trim.innerHTML = data.R + right_trim.innerHTML * 1;
 }

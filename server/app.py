@@ -42,7 +42,8 @@ def speedInput(data):
 
 @socketio.on('updateTrim')
 def updateTrim(change):
-	print(change)
+	global robot
+	robot.changeTrim(change)
 
 if __name__ == "__main__":
 	socketio.run(app)
