@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask_socketio import SocketIO
 import sys
+import subprocess
 
 app = Flask(__name__)
 
@@ -28,12 +29,17 @@ def connect():
 	global robot
 	print('Initializing Robot')
 	robot = Robot.Robot()
+	# start the camera
+	global cam
+	cam = subprocess.Popen('python3 /var/www/html/rpr2/cam/cam_feed.py',shell=True)
 
 @socketio.on('disconnect')
 def disconnect():
 	print('Client disconnected')
 	global robot
 	robot.stop()
+	global cam
+	cam.kill()
 
 @socketio.on('speedInput')
 def speedInput(data):
@@ -46,4 +52,4 @@ def updateTrim(change):
 	robot.changeTrim(change)
 
 if __name__ == "__main__":
-	socketio.run(app)
+	socketio.run(app,host="192.168.2.41")
