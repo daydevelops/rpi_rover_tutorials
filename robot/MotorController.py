@@ -12,3 +12,6 @@ class MotorController(object):
 
 	def rightM(self, speed):
 		self.ser.write(str.encode("R"+str(speed)+";"))
+
+	def yawCam(self, pwm):
+		self.ser.write(str.encode("CY"+str(pwm)+";"))
