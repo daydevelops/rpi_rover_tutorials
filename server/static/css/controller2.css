@@ -1,0 +1,108 @@
+/* GLOBAL */
+body,
+html {
+    /* color: #CCC;
+    background-color: black; */
+    font-family: monospace;
+}
+
+/* CONTROLLER */
+#controller-wrap {
+    height: 100vh;
+    width: 100vw;
+    border: 1px solid red;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 15px;
+}
+
+#power-on-btn {
+    height: 20%;
+    width: 40%;
+    font-size: 3em;
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#connected {
+    display: none;
+}
+
+#background {
+    height:100%;
+    width:100%;
+    z-index:1;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+#HUD {
+    height:100%;
+    width:100%;
+    z-index:2;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+#m1-pos-input, #m2-pos-input{
+    -webkit-appearance: none;
+    -webkit-transform: rotate(-90deg);
+    background-color:#0000;
+    position: absolute;
+    left: -20px;
+    top:100px;
+}
+
+#m2-pos-input {
+    left:10px;
+}
+
+#m1-pos-input::-webkit-slider-runnable-track, #m2-pos-input::-webkit-slider-runnable-track {
+    width: 100px;
+    height: 10px;
+	background-image: linear-gradient(to right,red,yellow,green,yellow,red);
+    border: none;
+    border-radius: 3px;
+}
+
+#m1-pos-input::-webkit-slider-thumb, #m2-pos-input::-webkit-slider-thumb  {
+    -webkit-appearance: none;
+    border: none;
+    height: 20px;
+    width: 10px;
+    border-radius: 50%;
+    background: black;
+    margin-top:-5px;
+}
+
+#m1-pos-input:focus, #m2-pos-input:focus {
+    outline: none;
+}
+
+#raw-output-wrapper {
+    position:absolute;
+    right:10px;
+    top:0px;
+    font-size: 24px;
+}
+#raw-output-wrapper p {
+    margin:0px;
+}
+
+#cam-yaw-wrapper {
+    width:100px;
+    height:100px;
+    position: absolute;
+    bottom: 10px;
+    left:20px;
+}
+
+#cam-yaw-wrapper img {
+    height:100%;
+    width:100%;
+}
