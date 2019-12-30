@@ -9,5 +9,5 @@ pyserial==3.4
 python-engineio==3.5.1
 python-socketio==3.1.2
 six==1.12.0
-Werkzeug==0.15.2
+Werkzeug==0.15.3
 picamera==1.13
