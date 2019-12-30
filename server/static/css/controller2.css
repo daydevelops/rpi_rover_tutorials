@@ -10,12 +10,12 @@ html {
 #controller-wrap {
     height: 100vh;
     width: 100vw;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: absolute;
     top: 50vh;
     left: 50vw;
     transform: translateY(-50%) translateX(-50%);
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 #power-on-btn {
@@ -89,6 +89,7 @@ html {
     right:10px;
     top:0px;
     font-size: 24px;
+    background-color:#FFF5;
 }
 #raw-output-wrapper p {
     margin:0px;
@@ -103,6 +104,11 @@ html {
 }
 
 #cam-yaw-wrapper img {
+    height:100%;
+    width:100%;
+}
+
+#cam-feed {
     height:100%;
     width:100%;
 }

@@ -9,7 +9,7 @@
     <body>
     
         <main id='controller-wrap'>
-            <div class='container-fluid'>
+            <div class='container-fluid p-0'>
                 <div id='not-connected'>
                     <div class='col-12 text-center'>
                         <h1>Connect your controller or press the start button to begin</h1>    
@@ -32,7 +32,8 @@
                             <img id="cam-yaw-img" src="static/img/radar.png" alt="">
                         </div>
                     </div>
-                    <iframe style="height:100%; width:100%;" src='http://192.168.2.41:5001/index.html'></iframe>
+                    <img id='cam-feed' src="/video_feed" alt="">
+                    <!-- <iframe style="height:100%; width:100%;" src='http://192.168.2.41:5001/index.html'></iframe> -->
                 </div>
             </div>
         </main>
