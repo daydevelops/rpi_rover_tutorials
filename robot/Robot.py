@@ -18,7 +18,7 @@ class Robot(object):
 	def yawCam(self,input):
 		# input will be in range of -1 to 1
 		# convert to PWM range of 0 - 255
-		pwm = (input/2) * 255
+		pwm = (float(input)/2) * 255
 		# self.motors.yawCam(pwm)
 		
 	# def stop(self):
